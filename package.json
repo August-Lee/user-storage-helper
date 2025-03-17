@@ -1,10 +1,9 @@
 {
   "name": "user-storage-helper",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A high-level storage utility supporting sessionStorage and localStorage operations with chainable API.",
-  "main": "dist/index.js", 
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "main": "index.js",  
+  "module": "index.js", 
   "scripts": {
     "test": "echo \"No tests yet\" && exit 1",
     "build": "tsc"
