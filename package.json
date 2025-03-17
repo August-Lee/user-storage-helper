@@ -1,10 +1,11 @@
 {
-  "name": "storage-user-info",
-  "version": "1.0.3",
-  "description": "storage-user-info",
-  "main": "index.js",
+  "name": "user-storage-helper",
+  "version": "1.0.0",
+  "description": "A high-level storage utility supporting sessionStorage and localStorage operations with chainable API.",
+  "main": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No tests yet\" && exit 1",
+    "build": "tsc"
   },
   "author": "august-lee",
   "license": "ISC",
@@ -15,6 +16,18 @@
     "sessionStorage",
     "session",
     "local",
-    "storage-user"
-  ]
+    "user-storage-helper"
+  ],
+  "devDependencies": {
+    "typescript": "^4.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/August-Lee/user-storage-helper"
+  },
+  "bugs": {
+    "url": "https://github.com/August-Lee/user-storage-helper/issues"  
+  },
+  "homepage": "https://github.com/August-Lee/user-storage-helper#readme", 
+  "private": false
 }

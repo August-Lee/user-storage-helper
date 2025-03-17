@@ -1,48 +1,34 @@
 # 1 安装
 ```
-npm install storage-user-info
+npm install user-storage-helper
 ```
 
 ----------------------------------------------------------------------
 
 # 2 介绍
 ```
-适用于存储个人id下的所有信息，可存储sessionStrage, localStorage
+适用于按用户级存取用户相关信息，可存储sessionStorage, localStorage
 ```
 
 ----------------------------------------------------------------------
 
 # 3 用法介绍 API
 ```
-import storage from 'storage-user-info';
+import StorageUtil from './storageUtil';
 
-可放在main文件做根方法
+// 获取整个存储对象
+const user = StorageUtil.get({ type: 'local', name: 'userData' });
 
-// 获取
-storage.getter({
-    type: 'local', // session
-    name: 'id',  // 存储对象 如userId
-    item: 'userInfo' // 非必填, 如果存储对象为对象，则获取对象下的谋个条目
-})
+// 获取指定项
+const userId = StorageUtil.get({ type: 'local', name: 'userData', item: 'userId' });
 
-// 插入
-.setter({
-    type: 'local', // session
-    name: 'id',  // 存储对象 如userId
-    item: 'userInfo' // 非必填, 如果存储对象为对象，则插入对象下的某个条目
-    value: '' // 插入值
-})
+// 设置存储项
+StorageUtil.set({ type: 'local', name: 'userData', value: { userId: 123, name: 'John Doe' } });
 
-// 删除
-.remove({
-    type: 'local', // session
-    name: 'id',  // 删除对象 如userId
-    item: 'userInfo' // 非必填, 如果存储对象为对象，则删除对象下的谋个条目
-})
-
-// 清空所有session
-.clear({
-    type: 'local', // session
-})
+// 链式操作
+StorageUtil.chain({ type: 'local', name: 'userData' })
+  .set('userId', 456)
+  .set('name', 'Jane Doe')
+  .remove('name')
+  .clear(); // 清空存储项
 ----------------------------------------------------------------------
-
